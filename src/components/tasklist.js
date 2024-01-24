@@ -51,7 +51,7 @@ const TaskList = () => {
         </button>
       </div>
       {tasks.map((task, index) => (
-        <div key={index} className={styles.taskItem}>
+        <div key={index} className={`${styles.taskItem} ${task.completed ? styles.completed : ''}`}>
           <div className={styles.taskDetails}>
             <p className={styles.taskTitle}>{task.title}</p>
             <p className={styles.taskDueDate}>Due by {task.dueDate}</p>
@@ -59,7 +59,7 @@ const TaskList = () => {
           <div>
             <button
               onClick={() => toggleCompletion(index)}
-              className={`${styles.completeButton} ${task.completed ? styles.completed : ''}`}>
+              className={styles.completeButton}>
               {task.completed ? 'Completed' : 'Complete'}
             </button>
             <button

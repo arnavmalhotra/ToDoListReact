@@ -1,54 +1,123 @@
 /* General Styles */
 body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background-color: #eef1f5;
-    margin: 0;
-    padding: 20px;
-    color: #333;
-  }
-  
-  /* Container for the Task List */
-  .taskListContainer {
-    max-width: 800px;
-    margin: 40px auto;
-    background-color: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 12px 24px -2px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    display: flex;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 20px;
+  color: #4a4a4a;
+}
+
+/* Container for the Task List */
+.taskListContainer {
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+/* Individual Task Item */
+.taskItem {
+  background-color: #fff;
+  border: 1px solid #e1e4e8;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.2s ease-in-out;
+}
+
+.taskItem:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Task Details */
+.taskDetails {
+  flex-grow: 1;
+  margin-right: 15px;
+}
+
+.taskTitle {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.taskDueDate {
+  font-size: 0.85rem;
+  color: #606770;
+  margin-top: 5px;
+}
+
+/* Buttons */
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 8px 15px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+  font-size: 0.85rem;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.addTaskButton {
+  background-color: #28a745;
+}
+
+.deleteButton {
+  background-color: #dc3545;
+}
+
+.completeButton {
+  background-color: #ffc107;
+}
+
+.completed {
+  background-color: #28a745;
+}
+
+/* Input Styles */
+input[type="text"],
+input[type="date"] {
+  border: 1px solid #ced4da;
+  border-radius: 15px;
+  padding: 8px 15px;
+  margin-right: 10px;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.inputGroup {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+  .inputGroup {
     flex-direction: column;
   }
-  
-  /* Individual Task Item */
-  .taskItem {
-    background-color: #f9f9f9;
-    border-left: 5px solid #007bff;
-    padding: 20px;
-    margin: 10px 0;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: background-color 0.3s, box-shadow 0.3s;
+
+  button, input[type="text"], input[type="date"] {
+    width: 100%;
+    margin-bottom: 10px;
   }
-  
-  .taskItem:hover {
-    background-color: #f0f0f0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  }
-  
-  /* Task Details */
-  .taskDetails {
-    flex-grow: 1;
-  }
-  
-  .taskTitle {
-    font-weight: 600;
-    font-size: 1.2rem;
-    color: #333;
-    margin: 0;
-  }
-  
-  .taskDueDate {
-    font-size: 0.
-  }  
+}
+.taskItem.completed {
+  background-color: #d4edda; /* Light green background for completed tasks */
+  border-left-color: #28a745; /* Green border for completed tasks */
+}
